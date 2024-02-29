@@ -1,0 +1,69 @@
+menu-title: '&dProgress Menu'
+menu-rows: 5
+
+levelSlots:
+  slots: "0,9,18,19,20,11,2,3,4,13,22,23,24,15,6,7,8,17,26"
+
+lockedLevel:
+  item:
+    material: red_stained_glass_pane
+    name: "&a%job% &fLvl. &e%level%"
+    lore:
+      - ''
+      - '&fRewards:'
+      - '  &8>>&a Global Points: &f%points%'
+      - '  &8>>&a &f%rewards value%'
+      - ''
+      - '&fTo Unlock:'
+      - '  &8>>&a &f%total_progress%/%required_progress% progress required'
+
+unlockedLevel:
+  item:
+    material: green_stained_glass_pane
+    name: "&a%job% &fLvl. &e%level%"
+    lore:
+      - ''
+      - '&fRewards:'
+      - '  &8>>&a Global Points: &f%points%'
+      - '  &8>>&a &f%rewards value%'
+      - ''
+      - '&fTo Unlock:'
+      - '  &8>>&a Already unlocked'
+
+currentLevel:
+  item:
+    material: yellow_stained_glass_pane
+    name: "&a%job% &fLvl. &e%level%"
+    lore:
+      - ''
+      - '&fRewards:'
+      - '  &8>>&a Global Points: &f%points%'
+      - '  &8>>&a &f%rewards value%'
+      - ''
+      - '&fTo Unlock:'
+      - '  &8>>&a Already unlocked'
+
+menu:
+  '39': # The slot the item is in
+    item:
+      material: ARROW
+      name: '&ePrevious page' # The name of the item in the GUI.
+    actions:
+      - '[menu](page = 1) {portal}' # If the page is 1, take them to the portal page
+      - '[menu](page ! 1) {previous-page}' # If their page is not 1, take them to the previous page
+  '40': # The slot the item is in
+    item:
+      material: IRON_DOOR
+      name: '&cGo back' # The name of the item in the GUI.
+    actions:
+      - '[menu] {portal}' #### CHANGE THIS TO GOING BACK TO JOB PAGE
+  '41': # The slot the item is in
+    item:
+      material: ARROW
+      name: '&eNext page' # The name of the item in the GUI.
+    actions:
+      - '[menu] {next-page}' #### CHANGE THIS TO NEXT PAGE
+  filler: # Fills all empty slots with the following item
+    slots: fill # This will fill all empty slots. You can also do 'startslot...endslot', e.g '2...8' to fill slots 2 to 8.
+    item:
+      material: gray_stained_glass_pane

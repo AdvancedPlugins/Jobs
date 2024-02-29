@@ -1,0 +1,102 @@
+# AdvancedJobs
+# Version: @version@
+language: 'en'
+
+# How many active jobs can a player have at once
+# This can be customised using the permission 'advancedjobs.slots.<number>'
+# Default is 3
+default-job-slots: 3
+# Max amount of jobs that can be added using permission above
+max-jobs-in-permission: 20
+
+# Get current jobs from bungee server
+# To make it work, one server in bungee proxy, should be set as 'false' and other servers should be set as 'true'
+current-jobs-use-bungee: false
+
+# The default menu to open when a player runs /jobs
+# Options: free, premium, portal
+default-menu: "portal"
+
+# Job resetting every 24h
+jobs-reset:
+  enabled: true
+  amount: 10 # Number of jobs to generate in each category
+  reset-time:
+    time: '00:00' # The time of day jobs should reset
+    time-zone: 'Europe/Oslo' # The timezone
+
+# Fill out this information if you are using a database connection (MySQL).
+storage-options:
+  # This will delay the loading of user data for half a second to make sure the server the user came from has saved their data.
+  # Use this if you are using ANY database that is not directly file based. JSON does not need this.
+  bungee-fix: false
+
+  # How many seconds that are between each save, therefore avoiding data loss.
+  auto-save-interval: 180
+
+  # How the plugin stores data. Either JSON (flat file) or MySQL (database).
+  storage-method: JSON
+
+  # The address used for connection.
+  # If you have a custom MySQL port use formatting 'localhost:3306'
+  address: localhost
+
+  # Text that is prefixed before the table names
+  prefix: advancedjobs-
+
+  # The name of the database that advancedjobs will use.
+  # You must create this as it will not be automatically generated.
+  database: advancedjobs
+
+  # The information used to log in.
+  username: advancedjobsuser
+  password: 'verySafe'
+
+  # These are additional settings for MySQL connections.
+  # You should only change these settings if you know what you're doing.
+  pool-settings:
+    maximum-pool-size: 10
+    minimum-idle: 10
+    maximum-lifetime: 1800000
+    connection-timeout: 5000
+
+  # These properties will most likely not need changing unless you encounter issues.
+  connection-properties:
+
+    # You may want to disable this if you are getting SSL errors,
+    # However, we always recommend you use SSL where possible.
+    useSSL: true
+
+enable-play-time: false # Switch this to true if you're going to use a playtime quest.
+
+# Enable this setting to add brewing protection. It will add NBT Tag to potion after brewing to make sure that players won't use same potion to finish quest.
+# Disable it only if you don't use brew quest
+brewing-protection: true
+
+#disabled-plugin-hooks: # This will disable the loading for any quests from the specified plugin. You can use this if you use an outdated version of them and it's causing errors to stop them.
+#  - 'AutoSell'
+#  - 'PlotSquared'
+
+boss-bar:
+  enabled: false
+  persistent: false
+  hide-after: 5 # How long to show the boss bar after a quest is progressed (IN SECONDS). If persistent, this setting does not apply
+  use-notify-percentages: true # If true, the boss bar will only be shown when one of the progression thresholds is reached
+  disabled-quest-types:
+    - 'fly'
+    - 'glide'
+    - 'sneak'
+    - 'walk'
+    - 'sprint'
+    - 'move'
+  # 1.9+ settings ONLY
+  color: PINK # must be a color from https://hub.spigotmc.org/javadocs/spigot/org/bukkit/boss/BarColor.html and in all caps
+  style: SOLID # must be a style from https://hub.spigotmc.org/javadocs/spigot/org/bukkit/boss/BarStyle.html and in all caps
+
+notification-method: 'action bar & chat' # How notifications will be sent to players. Options: action bar, chat, action bar & chat or none.
+job-progress-actions:
+  - '[title]{&eJob Task Completed!}'
+  - '[subtitle]{&7Completed task in &6%job_name%&f} &fjob'
+level-up-actions:
+  - '[title]{&eJob Level Up!}'
+  - '[subtitle]{&fLevel up in &3%job_name% &fjob to &blvl %level%&f!&f}'

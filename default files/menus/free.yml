@@ -1,0 +1,43 @@
+menu-title: 'Free Jobs'
+menu-rows: 5
+
+jobs-slots:
+  slots: '11...15, 20...24'
+
+menu:
+  '39':
+    item:
+      material: arrow:0
+      name: '&ePrevious Page'
+      lore:
+        - ''
+        - '&7&o(( Click to go to the previous page ))'
+    actions:
+      - '[menu](page = 1) {portal}' # If the page is 1, take them to the portal page
+      - '[menu](page ! 1) {previous-page}' # If their page is not 1, take them to the previous page
+  '40':
+    item:
+      material: book:0
+      name: '&eHow long until new jobs?'
+      lore:
+        - '&7New jobs in &e%time_left%...'
+    actions: []
+  '41':
+    item:
+      material: arrow:0
+      name: '&eNext Page'
+      lore:
+        - ''
+        - '&7&o(( Click to go to the next page ))'
+    actions:
+      - '[menu] {next-page}' # Take the user to the next page
+  filler2:
+    slots: '9...26'
+    item:
+      material: black_stained_glass_pane
+      name: '&r '
+  filler:
+    slots: fill # This will fill all empty slots. You can also do 'startslot...endslot', e.g '2...8' to fill slots 2 to 8.
+    item:
+      material: gray_stained_glass_pane
+      name: '&r '

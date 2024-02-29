@@ -1,0 +1,44 @@
+type: sprint
+
+variable:
+  root: none
+
+name: 'Runner'
+
+# Required Progress
+required-progress: "300 * %level%"
+
+# Points given after task is completed
+points-rewarded: "1 * %level%"
+
+# Required points to access this job
+required-points: 0
+
+# Is this a premium job?
+premium: false
+
+# rewards are taken from rewards.yml file
+default-rewards: [ 1 ]
+
+# when level-rewards contains level, give default & level rewards or only level-rewards
+both-rewards: false
+
+# levels info
+level-rewards: []
+
+notify-at-percentages: [ 10, 25, 50, 75, 100 ]
+
+item:
+  material: diamond_boots
+  name: '&2✦ &a&lRunner&a Job &7[Lvl. %level%] '
+  lore:
+    - '&7 To level up in this job, you must'
+    - '&7 sprint &a%required_progress% &7blocks.'
+    - ''
+    - '&2• &f&lCurrent Level &8» &7Lvl. %level% '
+    - '&2• &f&lActive &8» %active%'
+    - ''
+    - '&a&lJob Progress'
+    - '&2• &a%progress_bar% &7(&f%total_progress%&7/&f%required_progress%&7)'
+    - ''
+    - '&2• %action%'

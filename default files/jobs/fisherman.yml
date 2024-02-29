@@ -1,0 +1,44 @@
+type: fish
+
+variable:
+  root: none
+
+name: 'Fisherman'
+
+# Required Progress
+required-progress: "5 * (%level% ^ 2)"
+
+# Points given after task is completed
+points-rewarded: "1 * %level%"
+
+# Required points to access this job
+required-points: 0
+
+# Is this a premium job?
+premium: false
+
+# rewards are taken from rewards.yml file
+default-rewards: [ 1 ]
+
+# when level-rewards contains level, give default & level rewards or only level-rewards
+both-rewards: false
+
+# levels info
+level-rewards: []
+
+notify-at-percentages: [ 10, 25, 50, 75, 100 ]
+
+item:
+  material: COD
+  name: '&2✦ &a&lFisherman&a Job &7[Lvl. %level%] '
+  lore:
+    - '&7 To level up in this job, you must'
+    - '&7 catch &a%required_progress% &7fish.'
+    - ''
+    - '&2• &f&lCurrent Level &8» &7Lvl. %level% '
+    - '&2• &f&lActive &8» %active%'
+    - ''
+    - '&a&lJob Progress'
+    - '&2• &a%progress_bar% &7(&f%total_progress%&7/&f%required_progress%&7)'
+    - ''
+    - '&2• %action%'

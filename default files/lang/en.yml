@@ -1,0 +1,66 @@
+prefix: '[AdvancedJobs]'
+job-info: "&f&l%name% &7(&f%level%&7) [&f%points%&7/&f%required%&7]"
+jobs-reset: "&eThere have been some jobs that have refresh."
+cant-reset: "&cYou can't refresh current jobs, because bungee mode is enabled."
+jobs-sync: "&aSuccessfully synchronized all the jobs."
+cant-sync: "&cYou can't synchronize jobs, because bungee mode is disabled, or jobs are already sync"
+admin-cmd:
+  main: "&aMain Admin Command"
+  reload: "&aPlugin reloaded"
+  could-not-find-user: "&cCould not find user with name %player%"
+  could-not-find-job: "&cCould not find job with name %job%"
+  user-data-deleted: "&aYou have successfully deleted %player%'s data."
+  target-user-data-deleted: "&cYour job data has been wiped."
+  gave-points: "&aSuccessfully gave points to selected user"
+  confirm: "&aYou need to confirm that action using this command once again"
+  jobs-reset: "&aJobs reset"
+  levelup: "&aSuccessfully leveled player's job"
+
+jobs-time-format: # The time format used for saying how long until daily quests expire.
+  with-months-weeks: "%dmo %dw %dd %dh %dm %ds"
+  with-weeks-days: "%dw %dd %dh %dm %ds"
+  with-days-hours: "%dd %dh %dm %ds"
+  with-hours-minutes: "%dh %dm %ds"
+  with-minutes-seconds: "%dm %ds"
+  with-seconds: "%ds"
+
+job-join:
+  only-premium: "&cSelected job is only for premium users"
+  limit: "&cYou reached jobs limit, so you can't join here. Your limit: %limit%"
+  already-in: "&cYou are already in that job"
+  joined: "&aYou joined the selected job"
+  points: "&cYou don't have min. %points% points to join this job!"
+
+job-leave:
+  already-left: "&cYou already left that job."
+  left: "&aYou left selected job"
+
+progress-bar:
+  complete-color: '&a'
+  incomplete-color: '&c'
+  symbol: '|'
+
+job-active:
+  active: "&aYes"
+  not-active: "&cNo"
+
+job-action:
+  join: "&fClick to &ajoin&f this job"
+  leave: "&fClick to &cleave&f this job"
+  premium: "&cThis job is only for premium users"
+  points: "&cRequired points: &4%points%"
+
+quests:
+  # The base message will be used for all quests unless another message is set.
+  base-message-progressed: "&7You progressed the job &b%job_name% &8(&b%progress%&7/&b%required_progress%&8)"
+  base-message-completed: "&7You completed the job &b%job_name%"
+
+  boss-bar-message-progressed: "&7You progressed the job &b%job_name% &8(&b%progress%&7/&b%required_progress%&8)"
+  boss-bar-message-completed: "&7You completed the job &b%job_name%"
+
+  # The message set below will overwrite the one set as the base message.
+  # <quest name>-progressed: "<Your  message>"
+  # <quest-name>-completed: "<Your Message>"
+  # These are here as examples, and you can make as many as necessary.
+  askyblock_createisland-progressed: "&eQuests >> &7Custom ASkyblock progression message :D. &8(&e%progress%&7/&8%required_progress%&8)"
+  askyblock_createisland-completed: "&eQuests >> &7You completed the ASkyblock island quest!"
