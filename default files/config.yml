@@ -13,6 +13,13 @@ max-jobs-in-permission: 20
 # To make it work, one server in bungee proxy, should be set as 'false' and other servers should be set as 'true'
 current-jobs-use-bungee: false
 
+# Set the maximum level that player can reach in job
+# Set it to -1 to make it unlimited
+max-level: -1
+
+# Set to true if player should be able to still work in a job in which player reached maximum level
+can-work-when-max-level: false
+
 # The default menu to open when a player runs /jobs
 # Options: free, premium, portal
 default-menu: "portal"
